@@ -1,0 +1,445 @@
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Inter', sans-serif;
+color: #1f2937;
+}
+.typewriter {
+overflow: hidden;
+border-right: 2px solid;
+white-space: nowrap;
+display: inline-block;
+border-color: #2563eb;
+}
+@keyframes typing {
+from { width: 0 }
+to { width: var(--typing-width) }
+}
+@keyframes deleting {
+from { width: var(--typing-width) }
+to { width: 0 }
+}
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #2563eb }
+}
+@keyframes blink-caret-dark {
+from, to { border-color: transparent }
+50% { border-color: #cf2229 }
+}
+.project-card {
+transition: all 0.3s ease;
+}
+.project-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.modal {
+transition: opacity 0.3s ease;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #2563eb;
+}
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 18px;
+height: 18px;
+border-radius: 50%;
+background: #2563eb;
+cursor: pointer;
+}
+.parallax {
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.custom-checkbox {
+position: relative;
+padding-left: 30px;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #f3f4f6;
+border: 1px solid #d1d5db;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+background-color: #e5e7eb;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #2563eb;
+border-color: #2563eb;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 7px;
+top: 3px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e5e7eb;
+transition: .4s;
+border-radius: 34px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #2563eb;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+.skill-bar {
+height: 8px;
+background-color: #e5e7eb;
+border-radius: 4px;
+overflow: hidden;
+}
+.skill-progress {
+height: 100%;
+background-color: #2563eb;
+border-radius: 4px;
+}
+body.dark {
+  background-color: #18181b;
+  color: #f3f4f6;
+}
+body.dark .bg-white,
+body.dark .bg-gray-50,
+body.dark .bg-gradient-to-br,
+body.dark .project-card,
+body.dark .modal,
+body.dark .bg-gray-100 {
+  background-color: #23232a !important;
+  color: #f3f4f6 !important;
+}
+body.dark .text-gray-600,
+body.dark .text-gray-700,
+body.dark .text-gray-900 {
+  color: #d1d5db !important;
+}
+body.dark .border-gray-300,
+body.dark .border-gray-800 {
+  border-color: #333646 !important;
+}
+body.dark .bg-primary {
+  background-color: #cf2229 !important;
+}
+body.dark .text-primary {
+  color: #cf2229 !important;
+}
+body.dark .bg-primary-10 {
+  background-color: #cf2229 !important;
+}
+body.dark .bg-gray-800 {
+  background-color: #18181b !important;
+}
+body.dark .bg-gray-900 {
+  background-color: #111827 !important;
+}
+body.dark .text-white {
+  color: #f3f4f6 !important;
+}
+body.dark .text-gray-400 {
+  color: #9ca3af !important;
+}
+body.dark .bg-blue-100,
+body.dark .bg-green-100,
+body.dark .bg-yellow-100,
+body.dark .bg-purple-100,
+body.dark .bg-red-100,
+body.dark .bg-indigo-100 {
+  background-color: #23232a !important;
+}
+body.dark .text-blue-800,
+body.dark .text-green-800,
+body.dark .text-yellow-800,
+body.dark .text-purple-800,
+body.dark .text-red-800,
+body.dark .text-indigo-800 {
+  color: #cf2229 !important;
+}
+body.dark .rounded-full {
+  background-color: #23232a !important;
+}
+body.dark .shadow-md,
+body.dark .shadow-lg,
+body.dark .shadow-xl {
+  box-shadow: none !important;
+}
+body.dark input,
+body.dark textarea {
+  background-color: #23232a !important;
+  color: #f3f4f6 !important;
+}
+body.dark .skill-bar {
+  background-color: #23232a !important;
+}
+body.dark .skill-progress {
+  background-color: #cf2229 !important;
+}
+body.dark .bg-gray-100 {
+  background-color: #23232a !important;
+}
+body.dark .text-gray-800 {
+  color: #f3f4f6 !important;
+}
+body.dark .border {
+  border-color: #333646 !important;
+}
+body.dark .hover\:bg-primary:hover {
+  background-color: #cf2229 !important;
+  color: #18181b !important;
+}
+body.dark .hover\:text-primary:hover {
+  color: #cf2229 !important;
+}
+body.dark .hover\:text-white:hover {
+  color: #18181b !important;
+}
+body.dark .hover\:bg-gray-700:hover {
+  background-color: #23232a !important;
+}
+body.dark .bg-white {
+  background-color: #23232a !important;
+}
+body.dark .bg-opacity-95 {
+  background-color: rgba(35,35,42,0.95) !important;
+}
+body.dark .border-t {
+  border-top-color: #333646 !important;
+}
+body.dark .modal {
+  background-color: rgba(24,24,27,0.95) !important;
+}
+body.dark .bg-gradient-to-br {
+  background: linear-gradient(135deg, #23232a 0%, #18181b 100%) !important;
+}
+body.dark .checkmark {
+  background-color: #23232a !important;
+  border-color: #333646 !important;
+}
+body.dark .custom-checkbox input:checked ~ .checkmark {
+  background-color: #cf2229 !important;
+  border-color: #cf2229 !important;
+}
+body.dark .slider {
+  background-color: #23232a !important;
+}
+body.dark input:checked + .slider {
+  background-color: #cf2229 !important;
+}
+body.dark .slider:before {
+  background-color: #18181b !important;
+}
+body.dark .bg-gray-50 {
+  background-color: #18181b !important;
+}
+body.dark .shadow-lg,
+body.dark .shadow-xl,
+body.dark .shadow-md {
+  box-shadow: none !important;
+}
+
+/* --- Animated background for dark mode --- */
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+.background,
+.dark-bg-animated {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  display: none; /* Hide by default */
+}
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 16s linear infinite;
+}
+
+/* Individual li styles (copied from bg.css) */
+.background li:nth-child(1) {
+  left: 11%;
+  width: 97px;
+  height: 97px;
+  bottom: -97px;
+  animation-delay: 1s;
+}
+.background li:nth-child(2) {
+  left: 24%;
+  width: 93px;
+  height: 93px;
+  bottom: -93px;
+  animation-delay: 2s;
+}
+.background li:nth-child(3) {
+  left: 89%;
+  width: 75px;
+  height: 75px;
+  bottom: -75px;
+  animation-delay: 1s;
+}
+.background li:nth-child(4) {
+  left: 36%;
+  width: 39px;
+  height: 39px;
+  bottom: -39px;
+  animation-delay: 3s;
+}
+.background li:nth-child(5) {
+  left: 78%;
+  width: 135px;
+  height: 135px;
+  bottom: -135px;
+  animation-delay: 4s;
+}
+.background li:nth-child(6) {
+  left: 12%;
+  width: 66px;
+  height: 66px;
+  bottom: -66px;
+  animation-delay: 8s;
+}
+.background li:nth-child(7) {
+  left: 24%;
+  width: 85px;
+  height: 85px;
+  bottom: -85px;
+  animation-delay: 10s;
+}
+.background li:nth-child(8) {
+  left: 64%;
+  width: 111px;
+  height: 111px;
+  bottom: -111px;
+  animation-delay: 12s;
+}
+.background li:nth-child(9) {
+  left: 89%;
+  width: 136px;
+  height: 136px;
+  bottom: -136px;
+  animation-delay: 15s;
+}
+.background li:nth-child(10) {
+  left: 25%;
+  width: 68px;
+  height: 68px;
+  bottom: -68px;
+  animation-delay: 12s;
+}
+
+/* Show the background only in dark mode */
+body.dark .background,
+body.dark .dark-bg-animated {
+  display: block;
+}
+
+/* Make sure hero section is above the background */
+#home, header {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add these dark mode styles */
+
+/* Contact section icons in dark mode */
+body.dark .bg-blue-50 {
+  background-color: rgba(207, 34, 41, 0.1) !important;
+}
+
+/* Group hover effects in dark mode */
+body.dark .group:hover .group-hover\:bg-primary {
+  background-color: #cf2229 !important;
+}
+
+body.dark .group:hover .group-hover\:text-white {
+  color: #000000 !important;
+}
+
+/* Smooth transitions */
+.group > div {
+  transition: all 0.3s ease;
+}
+
+/* Contact links hover in dark mode */
+body.dark .hover\:text-primary:hover {
+  color: #cf2229 !important;
+}
