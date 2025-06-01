@@ -15,6 +15,7 @@
 <link rel="icon" type="image/png" href="images/h.png">
 </head>
 <body class="bg-gray-50">
+    <div class="cursor"></div>
 <!-- Add this just inside the <body> tag, before your hero section -->
 <ul class="background dark-bg-animated">
   <li></li><li></li><li></li><li></li><li></li>
@@ -63,9 +64,11 @@
 </div>
 </div>
 <div class="w-full md:w-1/2 flex justify-center">
-<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
-<img src="images/harry.jpg" alt="Harjit Singh" class="w-full h-full object-cover object-top">
-</div>
+    <div class="profile-picture-container">
+        <div class="profile-picture-wrapper shadow-xl">
+            <img src="images/harry.jpg" alt="Harjit Singh" class="w-full h-full object-cover object-top">
+        </div>
+    </div>
 </div>
 </div>
 </div>
@@ -79,7 +82,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Project 1 -->
-<div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+<div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md border border-transparent transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary">
 <div class="h-56 overflow-hidden">
 <img src="images/project1.png" alt="Perfumy Website" class="w-full h-full object-cover object-top">
 </div>
@@ -95,23 +98,23 @@
 </div>
 </div>
 <!-- Project 2 -->
-<div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
-<div class="h-56 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=mobile%20app%20interface%20for%20fitness%20tracking%20showing%20workout%20plans%2C%20progress%20charts%2C%20and%20user%20profile%2C%20clean%20modern%20design%2C%20professional%20UI%2FUX%20showcase%2C%20high%20quality%20rendering&width=600&height=400&seq=3&orientation=landscape" alt="Fitness Tracker App" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6">
-<h3 class="text-xl font-semibold mb-2">Fitness Tracker App</h3>
-<p class="text-gray-600 mb-4">Mobile application for tracking workouts, nutrition, and fitness progress with data visualization.</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Flutter</span>
-<span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Firebase</span>
-<span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Chart.js</span>
-</div>
-<button class="view-project px-4 py-2 text-primary border border-primary !rounded-button whitespace-nowrap hover:bg-primary hover:text-white transition-colors" data-project="2">View Details</button>
-</div>
+<div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md border border-transparent transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary">
+    <div class="h-56 overflow-hidden">
+        <img src="images/snake.png" alt="Snake Game" class="w-full h-full object-cover object-center">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">Snake Game</h3>
+        <p class="text-gray-600 mb-4">A classic Snake game built with JavaScript featuring smooth controls and responsive design. Test your reflexes and try to achieve the highest score!</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">JavaScript</span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">HTML5 Canvas</span>
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">CSS3</span>
+        </div>
+        <button class="view-project px-4 py-2 text-primary border border-primary !rounded-button whitespace-nowrap hover:bg-primary hover:text-white transition-colors" data-project="2">View Details</button>
+    </div>
 </div>
 <!-- Project 3 -->
-<div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+<div class="project-card bg-gray-50 rounded-lg overflow-hidden shadow-md border border-transparent transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary">
 <div class="h-56 overflow-hidden">
 <img src="https://readdy.ai/api/search-image?query=project%20management%20dashboard%20with%20task%20boards%2C%20analytics%20charts%2C%20and%20team%20collaboration%20features%2C%20professional%20web%20application%20interface%2C%20clean%20modern%20design%2C%20high%20quality%20rendering&width=600&height=400&seq=4&orientation=landscape" alt="Project Management Tool" class="w-full h-full object-cover object-top">
 </div>
@@ -190,33 +193,33 @@
 <div>
 <h3 class="text-2xl font-semibold mb-6">Additional Skills</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-<div class="bg-white p-6 rounded-lg shadow-sm">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 text-primary rounded-full mb-4">
-<i class="ri-database-2-line ri-xl"></i>
+  <div class="skill-card">
+    <div class="skill-icon bg-blue-100 text-primary rounded-full mb-4 w-12 h-12 flex items-center justify-center mx-auto">
+      <i class="ri-database-2-line ri-xl"></i>
+    </div>
+    <div class="skill-name">Database</div>
+    <ul class="space-y-2 text-gray-600">
+      <li>MongoDB</li>
+      <li>PostgreSQL</li>
+      <li>MySQL</li>
+      <li>Firebase</li>
+    </ul>
+  </div>
+  <div class="skill-card">
+  <div class="skill-icon bg-green-100 text-green-600 rounded-full mb-4 w-12 h-12 flex items-center justify-center mx-auto">
+    <i class="ri-tools-line ri-xl"></i>
+  </div>
+  <div class="skill-name">DevOps</div>
+  <ul class="space-y-2 text-gray-600">
+    <li>Docker</li>
+    <li>CI/CD</li>
+    <li>AWS / Azure</li>
+    <li>Git / GitHub</li>
+  </ul>
 </div>
-<h4 class="text-lg font-semibold mb-2">Database</h4>
-<ul class="space-y-2 text-gray-600">
-<li>MongoDB</li>
-<li>PostgreSQL</li>
-<li>MySQL</li>
-<li>Firebase</li>
-</ul>
-</div>
-<div class="bg-white p-6 rounded-lg shadow-sm">
-<div class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4">
-<i class="ri-tools-line ri-xl"></i>
-</div>
-<h4 class="text-lg font-semibold mb-2">DevOps</h4>
-<ul class="space-y-2 text-gray-600">
-<li>Docker</li>
-<li>CI/CD</li>
-<li>AWS / Azure</li>
-<li>Git / GitHub</li>
-</ul>
-</div>
-<div class="bg-white p-6 rounded-lg shadow-sm">
-<div class="w-12 h-12 flex items-center justify-center bg-purple-100 text-purple-600 rounded-full mb-4">
-<i class="ri-paint-brush-line ri-xl"></i>
+<div class="skill-card">
+  <div class="skill-icon bg-purple-100 text-green-600 rounded-full mb-4 w-12 h-12 flex items-center justify-center mx-auto">
+   <i class="ri-paint-brush-line ri-xl"></i>
 </div>
 <h4 class="text-lg font-semibold mb-2">Design</h4>
 <ul class="space-y-2 text-gray-600">
@@ -226,9 +229,9 @@
 <li>Design Systems</li>
 </ul>
 </div>
-<div class="bg-white p-6 rounded-lg shadow-sm">
-<div class="w-12 h-12 flex items-center justify-center bg-yellow-100 text-yellow-600 rounded-full mb-4">
-<i class="ri-server-line ri-xl"></i>
+<div class="skill-card">
+  <div class="skill-icon text-primary rounded-full mb-4 w-12 h-12 flex items-center justify-center mx-auto">
+   <i class="ri-server-line ri-xl"></i>
 </div>
 <h4 class="text-lg font-semibold mb-2">Networking</h4>
 <ul class="space-y-2 text-gray-600">
@@ -322,7 +325,7 @@
 <!-- Project Modal -->
 <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden modal">
 <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-<div class="sticky top-0 bg-white p-6 border-b flex justify-between items-center">
+<div class="sticky top-0 bg-white px-3 border-b flex justify-between items-center">
 <h3 id="modal-title" class="text-2xl font-semibold">Project Details</h3>
 <button id="close-modal" class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-700">
 <i class="ri-close-line ri-lg"></i>
@@ -427,13 +430,21 @@ image: "images/project1.png",
 websiteUrl: "https://harrykalsi24.github.io/Perfume-E-Comm/"
 },
 "2": {
-title: "Fitness Tracker App",
-description: "A mobile application designed to help users track their fitness journey, including workouts, nutrition, and progress metrics. The app provides personalized workout plans, nutrition tracking, and data visualization to help users achieve their fitness goals.",
-challenge: "Creating an intuitive user experience that motivates users to maintain consistency while accurately tracking various fitness metrics and providing meaningful insights.",
-solution: "Developed a gamified experience with achievements and milestones, implemented machine learning for workout recommendations, and created visually appealing progress charts for user motivation.",
-features: ["Workout tracking and planning", "Nutrition logging and analysis", "Progress visualization", "Goal setting", "Social sharing", "Achievement system", "Personalized recommendations", "Offline functionality"],
-technologies: ["Flutter", "Dart", "Firebase", "Chart.js", "Google Fit API", "Apple HealthKit", "TensorFlow Lite", "SQLite"],
-image: "https://readdy.ai/api/search-image?query=detailed%20view%20of%20fitness%20tracking%20mobile%20app%20showing%20workout%20progress%20charts%2C%20nutrition%20log%2C%20and%20achievement%20badges%2C%20professional%20mobile%20interface%20with%20clean%20modern%20design%20elements&width=800&height=500&seq=9&orientation=landscape"
+title: "Snake Game",
+description: "A classic Snake game built with JavaScript featuring smooth controls and responsive design. Test your reflexes and try to achieve the highest score!",
+challenge: "Implementing smooth game mechanics and ensuring consistent performance across different devices.",
+solution: "Utilized HTML5 Canvas for rendering and created responsive controls that work well on both desktop and mobile devices.",
+features: [
+"Smooth snake movement",
+"Score tracking",
+"Collision detection",
+"Speed progression",
+"Game over handling",
+"Responsive design"
+],
+technologies: ["JavaScript", "HTML5 Canvas", "CSS3"],
+image: "images/snake.png",
+websiteUrl: "https://harrykalsi24.github.io/Snake-game/"
 },
 "3": {
 title: "Project Management Tool",
@@ -449,48 +460,100 @@ function openModal(projectId) {
     const project = projectData[projectId];
     if (!project) return;
     modalTitle.textContent = project.title;
-    modalContent.innerHTML = `
-        <div class="mb-6 rounded-lg overflow-hidden">
-            <img src="${project.image}" alt="${project.title}" class="w-full h-auto">
-        </div>
-        <div class="space-y-6">
-            <div class="flex items-center justify-between">
-                <h4 class="text-xl font-semibold mb-2">Overview</h4>
-                ${project.websiteUrl ? `
+    if (projectId === "2") {
+        // Special handling for Snake Game
+        modalContent.innerHTML = `
+            <div class="mb-6 rounded-lg overflow-hidden">
+                <img src="${project.image}" alt="${project.title}" class="w-full h-auto">
+            </div>
+            <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <h4 class="text-xl font-semibold mb-2">Overview</h4>
                     <a href="${project.websiteUrl}" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
-                        <i class="ri-external-link-line"></i>
-                        Visit Website
+                        <i class="ri-gamepad-line"></i>
+                        Play Game
                     </a>
-                ` : ''}
-            </div>
-            <p class="text-gray-600">${project.description}</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <h4 class="text-xl font-semibold mb-2">Challenge</h4>
-                    <p class="text-gray-600">${project.challenge}</p>
+                </div>
+                <p class="text-gray-600">${project.description}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Challenge</h4>
+                        <p class="text-gray-600">${project.challenge}</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Solution</h4>
+                        <p class="text-gray-600">${project.solution}</p>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-2">Solution</h4>
-                    <p class="text-gray-600">${project.solution}</p>
+                    <h4 class="text-xl font-semibold mb-2">Key Features</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        ${project.features.map(feature => 
+                            `<li class="flex items-center text-gray-600">
+                                <i class="ri-check-line text-primary mr-2"></i>${feature}
+                            </li>`
+                        ).join('')}
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        ${project.technologies.map(tech => 
+                            `<span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">
+                                ${tech}
+                            </span>`
+                        ).join('')}
+                    </div>
                 </div>
             </div>
-            <div>
-                <h4 class="text-xl font-semibold mb-2">Key Features</h4>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    ${project.features.map(feature => `<li class="flex items-center text-gray-600"><i class="ri-check-line text-primary mr-2"></i>${feature}</li>`).join('')}
-                </ul>
+        `;
+    } else {
+        modalContent.innerHTML = `
+            <div class="mb-6 rounded-lg overflow-hidden">
+                <img src="${project.image}" alt="${project.title}" class="w-full h-auto">
             </div>
-            <div>
-                <h4 class="text-xl font-semibold mb-2">Technologies Used</h4>
-                <div class="flex flex-wrap gap-2">
-                    ${project.technologies.map(tech => `<span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">${tech}</span>`).join('')}
+            <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                    <h4 class="text-xl font-semibold mb-2">Overview</h4>
+                    ${project.websiteUrl ? `
+                        <a href="${project.websiteUrl}" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
+                            <i class="ri-external-link-line"></i>
+                            Visit Website
+                        </a>
+                    ` : ''}
+                </div>
+                <p class="text-gray-600">${project.description}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Challenge</h4>
+                        <p class="text-gray-600">${project.challenge}</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Solution</h4>
+                        <p class="text-gray-600">${project.solution}</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Key Features</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        ${project.features.map(feature => `<li class="flex items-center text-gray-600"><i class="ri-check-line text-primary mr-2"></i>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">Technologies Used</h4>
+                    <div class="flex flex-wrap gap-2">
+                        ${project.technologies.map(tech => `<span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">${tech}</span>`).join('')}
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
+        `;
+    }
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
@@ -626,6 +689,58 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.cursor');
+    
+    // Move cursor
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Add hover effect for clickable elements
+    const clickables = document.querySelectorAll('button, a, input, select, .view-project');
+    
+    clickables.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('expand');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('expand');
+        });
+    });
+
+    // Add click animation
+    document.addEventListener('mousedown', () => {
+        cursor.classList.add('active');
+    });
+
+    document.addEventListener('mouseup', () => {
+        cursor.classList.remove('active');
+    });
+
+    // Handle cursor visibility
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+});
+</script>
+<script>
+// Add to your existing cursor script
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
+if (isTouchDevice()) {
+    document.querySelector('.cursor').style.display = 'none';
+}
 </script>
 </body>
 </html>

@@ -12,14 +12,25 @@ border-right: 2px solid;
 white-space: nowrap;
 display: inline-block;
 border-color: #2563eb;
+width: 100%;
+max-width: fit-content;
+animation: blink-caret 0.75s step-end infinite;
 }
 @keyframes typing {
-from { width: 0 }
-to { width: var(--typing-width) }
+from { 
+width: 0;
+}
+to { 
+width: 100%;
+}
 }
 @keyframes deleting {
-from { width: var(--typing-width) }
-to { width: 0 }
+from { 
+width: 100%;
+}
+to { 
+width: 0;
+}
 }
 @keyframes blink-caret {
 from, to { border-color: transparent }
@@ -31,10 +42,29 @@ from, to { border-color: transparent }
 }
 .project-card {
 transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
 }
 .project-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+transform: translateY(-6px) scale(1.05);
+}
+.project-card .h-56 img {
+transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+}
+.project-card:hover .h-56 img {
+transform: scale(1.08) rotate(-1deg);
+}
+.project-card::after {
+content: '';
+position: absolute;
+inset: 0;
+opacity: 0;
+transition: opacity 0.3s;
+pointer-events: none;
+z-index: 2;
+}
+.project-card:hover::after {
+opacity: 1;
 }
 .modal {
 transition: opacity 0.3s ease;
@@ -443,3 +473,166 @@ body.dark .group:hover .group-hover\:text-white {
 body.dark .hover\:text-primary:hover {
   color: #cf2229 !important;
 }
+body, * {
+    cursor: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    background: white;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    z-index: 9999;
+}
+
+.cursor.expand {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.cursor.active {
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Dark mode cursor styles */
+.dark .cursor {
+    background: white;
+}
+
+.dark .cursor.expand {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Profile picture hover effect */
+.profile-picture-container {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+}
+
+.profile-picture-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 360deg);
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+}
+
+.profile-picture-container:hover::before {
+    animation: circleLoader 0.8s ease-in-out forwards;
+}
+
+.dark .profile-picture-container::before {
+    background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 360deg);
+}
+
+@keyframes circleLoader {
+    0% {
+        background: conic-gradient(from 0deg at 50% 50%, #2563eb 0deg, transparent 0deg);
+    }
+    100% {
+        background: conic-gradient(from 0deg at 50% 50%, #2563eb 360deg, transparent 360deg);
+    }
+}
+
+.dark .profile-picture-container:hover::before {
+    animation: circleLoaderDark 0.8s ease-in-out forwards;
+}
+
+@keyframes circleLoaderDark {
+    0% {
+        background: conic-gradient(from 0deg at 50% 50%, #ef4444 0deg, transparent 0deg);
+    }
+    100% {
+        background: conic-gradient(from 0deg at 50% 50%, #ef4444 360deg, transparent 360deg);
+    }
+}
+
+.profile-picture-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    transition: transform 0.3s ease;
+    transition-delay: 0.8s;
+}
+
+.profile-picture-container:hover .profile-picture-wrapper {
+    transform: scale(0.95);
+}
+
+/* Skill card effect */
+.skill-card {
+  background: #f3f4f6;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(37,99,235,0.05);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: 
+    transform 0.3s cubic-bezier(.4,2,.6,1),
+    box-shadow 0.3s,
+    background 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 32px 0 rgba(37,99,235,0.18);
+  background: linear-gradient(120deg, #e0e7ff 0%, #f3f4f6 100%);
+}
+
+.skill-card .skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: none; /* Keep icon color constant */
+}
+
+.skill-card .skill-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.skill-card:hover .skill-name {
+  color: #2563eb;
+}
+
+/* Dark mode for skills */
+body.dark .skill-card {
+  background: #23232a;
+  box-shadow: 0 2px 12px 0 rgba(207,34,41,0.08);
+}
+body.dark .skill-card:hover {
+  background: linear-gradient(120deg, #2d2d3a 0%, #23232a 100%);
+  box-shadow: 0 8px 32px 0 rgba(207,34,41,0.18);
+}
+body.dark .skill-card .skill-name {
+  color: #f3f4f6;
+}
+body.dark .skill-card:hover .skill-name {
+  color: #cf2229;
+}
+
+body.dark .project-card:hover {
+  border-color: #cf2229 !important;
+  box-shadow: 0 8px 32px 0 rgba(207,34,41,0.18);
+}
+
